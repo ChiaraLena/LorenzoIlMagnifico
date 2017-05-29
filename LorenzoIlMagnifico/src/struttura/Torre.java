@@ -13,6 +13,8 @@ public class Torre
 	
 	public Torre(int i)
 	{
+		
+		
 		switch(i)
 		{
 			case 0:

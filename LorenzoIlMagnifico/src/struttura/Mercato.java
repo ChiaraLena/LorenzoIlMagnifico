@@ -1,24 +1,31 @@
 package struttura;
 
-public class Mercato extends Tabellone
+public class Mercato extends SpazioAzione
 {
-	private boolean spaziolibero;
+
+	
+	private boolean spazioLibero;
 	Plancia p;
 	
-	public boolean isSpaziolibero() 
+	public boolean isSpazioLibero() 
 	{
-		return spaziolibero;
+		return spazioLibero;
 	}
 
-	public void setSpaziolibero(boolean spaziolibero) 
+	public void setSpazioLibero(boolean spazioLibero) 
 	{
-		this.spaziolibero = spaziolibero;
+		this.spazioLibero = spazioLibero;
 	}
 	
 	public Mercato() 
 	{
-		spaziolibero = true;	
+		spazioLibero = true;	
 		p = new Plancia();
+		this.nomeAzione="Mercato";
+		this.requisitoMinimo=1;
+		this.malus=0;
+		this.numMaxFamiliari=1;
+		
 	}
 
 	public Plancia OttieniRisorse(int i) 

@@ -32,10 +32,6 @@ public class CartaImpresa extends Carta
 		pl=new Plancia();
 		return pl;
 	}
-	@Override
-	public Plancia EffettoPermanente() {
-		// TODO Auto-generated method stub
-		pl=new Plancia();
-		return pl;
-	}
+
+	
 }

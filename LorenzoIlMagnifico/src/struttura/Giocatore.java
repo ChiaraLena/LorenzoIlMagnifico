@@ -9,6 +9,8 @@ public class Giocatore extends Thread
 	private Familiare farancione;
 	private Familiare fneutro;
 	private Scomunica sco;
+	private boolean scomunicato;
+	private Tabellone t;
 	
 	public String getNome() 
 	{
@@ -85,9 +87,97 @@ public class Giocatore extends Thread
 	public Giocatore(String n)
 	{
 		nome = n;
+		scomunicato=false;
 		fbianco = new Familiare(0);
 		fnero = new Familiare(1);
 		farancione = new Familiare(2);
 		fneutro = new Familiare(3);
 	}
+	
+	public Tabellone PosizionaFamiliareRaccolto(Familiare f){
+		if (t.spazioRaccoltoSingolo.isSpazioLibero()==true) {
+			t.spazioRaccoltoSingolo.FamiliariPresenti[0]=f;
+			t.spazioRaccoltoSingolo.valoreAzione=f.getForza();
+			//attivare effetti permanenti delle carte territorio
+			
+		}
+		
+		else if (t.spazioRaccoltoSingolo.isSpazioLibero()==false) {
+			int i=t.spazioRaccoltoMultiplo.FamiliariPresenti.length;
+			
+			if (f.getForza()-t.spazioRaccoltoMultiplo.malus >= t.spazioRaccoltoMultiplo.requisitoMinimo) {
+				t.spazioRaccoltoMultiplo.FamiliariPresenti[i]=f;
+				t.spazioRaccoltoMultiplo.valoreAzione=f.getForza();
+				//attivare effetti permanenti delle carte territorio
+			}
+			
+			else System.out.println("forza insufficiente");
+		}
+	return t;
+	}
+	
+	public Tabellone PosizionaFamiliareProduzione(Familiare f){
+		if (t.spazioProduzioneSingolo.isSpazioLibero()==true) {
+			t.spazioProduzioneSingolo.FamiliariPresenti[0]=f;
+			t.spazioProduzioneSingolo.valoreAzione=f.getForza();
+			//attivare effetti permanenti delle carte edificio
+			
+			
+		}
+		
+		else if (t.spazioProduzioneSingolo.isSpazioLibero()==false) {
+			int i=t.spazioProduzioneMultiplo.FamiliariPresenti.length;
+			
+			if (f.getForza()-t.spazioProduzioneMultiplo.malus >= t.spazioProduzioneMultiplo.requisitoMinimo) {
+				t.spazioProduzioneMultiplo.FamiliariPresenti[i]=f;
+				t.spazioProduzioneMultiplo.valoreAzione=f.getForza();
+				//attivare effetti permanenti delle carte edificio
+			}
+			
+			else System.out.println("forza insufficiente");	
+		}
+		 
+	return t;
+	}
+	
+	
+	public Familiare IncrementaForzaFamiliare(Familiare f) {
+		
+		if (pl.getServitori()>0) {
+			pl.setServitori(pl.getServitori()-1);
+			f.setForza(f.getForza()+1);
+		}
+		
+		else System.out.println("servitori isufficienti");
+		return f;
+	}
+	
+
+	public Tabellone PosizionaFamiliareMercato(Familiare f) {
+		
+		if (f.getForza()>1) {	
+			int i=0;
+			while (i<4) {
+				if (t.spaziomercato[i].isSpazioLibero()==false) {
+					i++;
+				}
+				else {
+					t.spaziomercato[i].FamiliariPresenti[0]=f;
+					t.spaziomercato[i].OttieniRisorse(i);		
+				}
+			}	
+		}
+		else System.out.println("forza insufficiente");
+			
+		return t;
+	}
+	
+	
+	public void PosizionaFamiliarePiano() {
+		
+		
+		
+	}
+	
+	
 }

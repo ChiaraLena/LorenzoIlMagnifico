@@ -2,7 +2,7 @@ package struttura;
 
 import java.util.ArrayList;
 
-public class PalazzoConsiglio extends Tabellone
+public class PalazzoConsiglio extends SpazioAzione
 {
 	Plancia pl;
 	Ordine ordine;
@@ -14,6 +14,9 @@ public class PalazzoConsiglio extends Tabellone
 		ordine=new Ordine();
 		familiariPresenti= new ArrayList<Familiare>();
 		pl = new Plancia();
+		this.nomeAzione="PalazzoConsiglio";
+		this.malus=0;
+		this.requisitoMinimo=1;
 	}
 	
 	public Plancia OttieniRisorse() 
@@ -34,7 +37,7 @@ public class PalazzoConsiglio extends Tabellone
 	
 	public void InserisciFamiliare(Familiare f) 
 	{
-		if (f.getForza()>=1) 
+		if (f.getForza()>=requisitoMinimo) 
 		{
 			familiariPresenti.add(f);
 		}

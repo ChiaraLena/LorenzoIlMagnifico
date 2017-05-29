@@ -27,18 +27,24 @@ public class Familiare extends Giocatore
 		{
 			case 0:
 				colore=ColoriDado.bianco;
+				forza=1;
 				break;
+			
 			case 1:
 				colore=ColoriDado.nero;
+				forza=1;
 				break;
+			
 			case 2:
 				colore=ColoriDado.arancione;
+				forza=1;
 				break;
+			
 			case 3:
 				colore=ColoriDado.neutro;
+				forza=0;
 				break;
 		}
-		forza = 1;
 	}
 	
 	public void CambiaForza(Dado d)

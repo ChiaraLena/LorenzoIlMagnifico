@@ -1,3 +1,4 @@
+package struttura;
 
 public class TesseraScomunica {
 	
@@ -8,6 +9,8 @@ public class TesseraScomunica {
 	Plancia pl;
 	Giocatore g;
 	Familiare f;
+	Tabellone t;
+	
 	public TesseraScomunica() {
 		
 		for(contatoreCarta=0; contatoreCarta<MAX; contatoreCarta++) {
@@ -41,11 +44,15 @@ public class TesseraScomunica {
 				
 			case 5:
 				//carta che dimuisce di 3 il valore di un'azione di raccolto
+				g.PosizionaFamiliareRaccolto().spazioRaccoltoSingolo.valoreAzione-=3;
+				g.PosizionaFamiliareRaccolto().spazioRaccoltoMultiplo.valoreAzione-=3;
 				periodo=1;
 				break;
 				
 			case 6:
 				//carta che diminuisce di 3 il valore di un'azione di produzione
+				g.PosizionaFamiliareProduzione().spazioProduzioneSingolo.valoreAzione-=3;
+				g.PosizionaFamiliareProduzione().spazioProduzioneMultiplo.valoreAzione-=3;
 				periodo=1;
 				break;
 			

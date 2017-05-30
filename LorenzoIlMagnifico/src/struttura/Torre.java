@@ -1,6 +1,6 @@
 package struttura;
 
-//classe torre
+//classe torre la chiara e l'acer
 
 public class Torre 
 {

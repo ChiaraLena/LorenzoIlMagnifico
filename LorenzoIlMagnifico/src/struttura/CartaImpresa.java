@@ -87,15 +87,14 @@ public class CartaImpresa extends Carta
 		costopuntomilitare = cpm;
 	}
 	
-	@Override
-	public Plancia EffettoImmediato() {
-		// TODO Auto-generated method stub
+	public Plancia EffettoImmediato() 
+	{
 		pl=new Plancia();
 		return pl;
 	}
-	@Override
-	public Plancia EffettoPermanente() {
-		// TODO Auto-generated method stub
+
+	public Plancia EffettoPermanente() 
+	{
 		pl=new Plancia();
 		return pl;
 	}

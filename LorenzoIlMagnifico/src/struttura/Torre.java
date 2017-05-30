@@ -1,6 +1,5 @@
 package struttura;
 
-<<<<<<< HEAD
 public class Torre 
 {
 	public ColoriCarteTorri colore;
@@ -14,25 +13,8 @@ public class Torre
 	
 	public Torre(int i)
 	{
-=======
-//classe torre la chiara e l'acer
+		
 
-public class Torre 
-{
-	public ColoriCarteTorri colore;
-	public Piano piano1;
-	public Piano piano2;
-	public Piano piano3;
-	public Piano piano4;
-	
-	public Torre()
-	{}
-	
-	public Torre(int i)
-	{
-		
-		
->>>>>>> branch 'master' of https://github.com/ChiaraLena/LorenzoIlMagnifico.git
 		switch(i)
 		{
 			case 0:

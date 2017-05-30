@@ -1,5 +1,7 @@
 package struttura;
 
+//classe torre
+
 public class Torre 
 {
 	public ColoriCarteTorri colore;

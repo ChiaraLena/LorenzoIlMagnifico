@@ -44,15 +44,15 @@ public class TesseraScomunica {
 				
 			case 5:
 				//carta che dimuisce di 3 il valore di un'azione di raccolto
-				g.PosizionaFamiliareRaccolto().spazioRaccoltoSingolo.valoreAzione-=3;
-				g.PosizionaFamiliareRaccolto().spazioRaccoltoMultiplo.valoreAzione-=3;
+				g.PosizionaFamiliareRaccolto(f).spazioRaccoltoSingolo.valoreAzione-=3;
+				g.PosizionaFamiliareRaccolto(f).spazioRaccoltoMultiplo.valoreAzione-=3;
 				periodo=1;
 				break;
 				
 			case 6:
 				//carta che diminuisce di 3 il valore di un'azione di produzione
-				g.PosizionaFamiliareProduzione().spazioProduzioneSingolo.valoreAzione-=3;
-				g.PosizionaFamiliareProduzione().spazioProduzioneMultiplo.valoreAzione-=3;
+				g.PosizionaFamiliareProduzione(f).spazioProduzioneSingolo.valoreAzione-=3;
+				g.PosizionaFamiliareProduzione(f).spazioProduzioneMultiplo.valoreAzione-=3;
 				periodo=1;
 				break;
 			
@@ -84,11 +84,13 @@ public class TesseraScomunica {
 		
 			case 12:
 				//carta che non permette di piazzare un familiare sul mercato
+				
 				periodo=2;
 				break;
 		
 			case 13:
 				//carta per cui si devono spendere 2 servitori per aumentare l'azione di 1
+				pl.setServitori(pl.getServitori()-1);
 				periodo=2;
 				break;
 				

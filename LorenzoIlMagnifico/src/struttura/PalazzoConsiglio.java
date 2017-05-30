@@ -35,11 +35,4 @@ public class PalazzoConsiglio extends SpazioAzione
 		return ordine;	
 	}
 	
-	public void InserisciFamiliare(Familiare f) 
-	{
-		if (f.getForza()>=requisitoMinimo) 
-		{
-			familiariPresenti.add(f);
-		}
-	}
 }

@@ -120,7 +120,11 @@ public class Giocatore extends Thread
 		if (t.spazioProduzioneSingolo.isSpazioLibero()==true) {
 			t.spazioProduzioneSingolo.FamiliariPresenti[0]=f;
 			t.spazioProduzioneSingolo.valoreAzione=f.getForza();
-			//attivare effetti permanenti delle carte edificio
+			
+			for(int j=0; j<pl.carteTerritorio.length; j++) {
+				//attivare effetti permanenti delle carte edificio
+				pl.carteTerritorio[j].EffettoPermanente();
+			}
 			
 			
 		}
@@ -131,7 +135,11 @@ public class Giocatore extends Thread
 			if (f.getForza()-t.spazioProduzioneMultiplo.malus >= t.spazioProduzioneMultiplo.requisitoMinimo) {
 				t.spazioProduzioneMultiplo.FamiliariPresenti[i]=f;
 				t.spazioProduzioneMultiplo.valoreAzione=f.getForza();
-				//attivare effetti permanenti delle carte edificio
+				
+				for(int j=0; j<pl.carteEdificio.length; j++) {
+					//attivare effetti permanenti delle carte edificio
+					pl.carteEdificio[j].EffettoPermanente();
+				}
 			}
 			
 			else System.out.println("forza insufficiente");	
@@ -174,10 +182,21 @@ public class Giocatore extends Thread
 	
 	
 	public void PosizionaFamiliarePiano() {
-		
+			
 		
 		
 	}
 	
 	
+	public Tabellone PosizionaFamiliarePalazzoConsiglio(Familiare f) {
+		
+		if (f.getForza()>1) {	
+			t.spazioconsiglio.familiariPresenti.add(f);	
+			t.spazioconsiglio.OttieniRisorse();
+		}
+		else System.out.println("forza insufficiente");
+			
+		return t;
+		
+	}
 }

@@ -43,6 +43,7 @@ public abstract class Carta
 	}
 	
 	public abstract Plancia EffettoImmediato();
+	public abstract Plancia EffettoPermanente();
 
 
 }

@@ -9,6 +9,7 @@ public class TesseraScomunica {
 	Plancia pl;
 	Giocatore g;
 	Familiare f;
+<<<<<<< HEAD
 	public TesseraScomunica() {
 		
 		for(contatoreCarta=0; contatoreCarta<MAX; contatoreCarta++) {
@@ -83,6 +84,90 @@ public class TesseraScomunica {
 		
 			case 13:
 				//carta per cui si devono spendere 2 servitori per aumentare l'azione di 1
+=======
+	Tabellone t;
+	
+	public TesseraScomunica() {
+		
+		for(contatoreCarta=0; contatoreCarta<MAX; contatoreCarta++) {
+			
+			tessere[contatoreCarta]=new TesseraScomunica();
+		
+		}
+		
+		switch(contatoreCarta) {
+		
+			case 1:
+				pl.setPuntimil(pl.getPuntimil() - 1);
+				periodo=1;
+				break;
+				
+			case 2:
+				pl.setMonete(pl.getMonete()-1);
+				periodo=1;
+				break;
+				
+			case 3:
+				pl.setServitori(pl.getServitori()-1);
+				periodo=1;
+				break;
+				
+			case 4:
+				pl.setLegna(pl.getLegna()-1);
+				pl.setPietre(pl.getPietre()-1);
+				periodo=1;
+				break;
+				
+			case 5:
+				//carta che dimuisce di 3 il valore di un'azione di raccolto
+				g.PosizionaFamiliareRaccolto(f).spazioRaccoltoSingolo.valoreAzione-=3;
+				g.PosizionaFamiliareRaccolto(f).spazioRaccoltoMultiplo.valoreAzione-=3;
+				periodo=1;
+				break;
+				
+			case 6:
+				//carta che diminuisce di 3 il valore di un'azione di produzione
+				g.PosizionaFamiliareProduzione(f).spazioProduzioneSingolo.valoreAzione-=3;
+				g.PosizionaFamiliareProduzione(f).spazioProduzioneMultiplo.valoreAzione-=3;
+				periodo=1;
+				break;
+			
+			case 7:
+				f=g.getFbianco();
+				f.setForza(f.getForza()-1);
+				periodo=1;
+				break;
+				
+			case 8:
+				//carta che diminuisce di 4 il valore dell'azione di una carta territorio
+				periodo=2;
+				break;
+				
+			case 9:
+				//carta che diminuisce di 4 il valore dell'azione di una carta edificio
+				periodo=2;
+				break;
+			
+			case 10:
+				//carta che diminuisce di 4 il valore dell'azione di una carta personaggio
+				periodo=2;
+				break;
+				
+			case 11:
+				//carta che diminuisce di 4 il valore dell'azione di una carta impresa
+				periodo=2;
+				break;
+		
+			case 12:
+				//carta che non permette di piazzare un familiare sul mercato
+				
+				periodo=2;
+				break;
+		
+			case 13:
+				//carta per cui si devono spendere 2 servitori per aumentare l'azione di 1
+				pl.setServitori(pl.getServitori()-1);
+>>>>>>> branch 'master' of https://github.com/ChiaraLena/LorenzoIlMagnifico.git
 				periodo=2;
 				break;
 				

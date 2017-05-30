@@ -16,6 +16,7 @@ public class CartaTerritorio extends Carta
 		setPeriodo(p);
 	}
 
+<<<<<<< HEAD
 	public Plancia EffettoImmediato() 
 	{
 		pl = new Plancia();
@@ -25,6 +26,19 @@ public class CartaTerritorio extends Carta
 	public Plancia EffettoPermanente() 
 	{
 		pl = new Plancia();
+=======
+	@Override
+	public Plancia EffettoImmediato() {
+		// TODO Auto-generated method stub
+		pl=new Plancia();
+		return pl;
+	}
+
+	@Override
+	public Plancia EffettoPermanente() {
+		// TODO Auto-generated method stub
+		pl=new Plancia();
+>>>>>>> branch 'master' of https://github.com/ChiaraLena/LorenzoIlMagnifico.git
 		return pl;
 	}
 

@@ -9,7 +9,8 @@ public class Giocatore extends Thread
 	private Familiare farancione;
 	private Familiare fneutro;
 	private Scomunica sco;
-	private boolean scomunicato;
+	private int MAX_INT=3;
+	private boolean[] scomunicato=new boolean[MAX_INT];
 	private Tabellone t;
 	
 	public String getNome() 
@@ -87,7 +88,10 @@ public class Giocatore extends Thread
 	public Giocatore(String n)
 	{
 		nome = n;
-		scomunicato=false;
+		for(int i=0; i<MAX_INT; i++) {
+			scomunicato[i]=false;
+		}
+		
 		fbianco = new Familiare(0);
 		fnero = new Familiare(1);
 		farancione = new Familiare(2);
@@ -133,8 +137,8 @@ public class Giocatore extends Thread
 			int i=t.spazioProduzioneMultiplo.FamiliariPresenti.length;
 			
 			if (f.getForza()-t.spazioProduzioneMultiplo.malus >= t.spazioProduzioneMultiplo.requisitoMinimo) {
-				t.spazioProduzioneMultiplo.FamiliariPresenti[i]=f;
-				t.spazioProduzioneMultiplo.valoreAzione=f.getForza();
+				t.spazioProduzioneMultiplo.FamiliariPresenti[i-1]=f;
+				t.spazioProduzioneMultiplo.valoreAzione=f.getForza()-t.spazioProduzioneMultiplo.malus;
 				
 				for(int j=0; j<pl.carteEdificio.length; j++) {
 					//attivare effetti permanenti delle carte edificio

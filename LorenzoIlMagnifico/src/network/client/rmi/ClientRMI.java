@@ -78,7 +78,8 @@ public class ClientRMI extends ClientAstratto implements RMIGiocatoreInterfaccia
 	}
 
 	@Override
-	public void FineTurno() {
-		// TODO Auto-generated method stub
+	public void FineTurno() 
+	{
+		mioServer.FineTurno(nomeRMI);
 	}
 }

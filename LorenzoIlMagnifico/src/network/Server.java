@@ -20,7 +20,7 @@ public class Server implements InterfacciaServer
 	public Server()
 	{
 		mioSS = new SocketServer(PORTA_SOCKET);
-		mioRMIS = new RMIServer(PORTA_RMI);
+		mioRMIS = new RMIServer(PORTA_RMI, this);
 	}
 	
 	public void StartServer()

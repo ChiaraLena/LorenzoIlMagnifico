@@ -2,10 +2,13 @@ package network.server.rmi;
 
 import network.GiocatoreRemoto;
 import network.client.rmi.RMIGiocatoreInterfaccia;
+import struttura.Turno;
 
 public class GiocatoreRMI extends GiocatoreRemoto
 {
 	private RMIGiocatoreInterfaccia miaInterfaccia;
+	
+	private Turno mioTurno;
 	
 	public GiocatoreRMI(RMIGiocatoreInterfaccia interfaccia)
 	{
@@ -28,5 +31,12 @@ public class GiocatoreRMI extends GiocatoreRemoto
 	public void TermineGioco() 
 	{
 		miaInterfaccia.NotificaGiocoTerminato();
+	}
+
+	@Override
+	public void FineTurno() 
+	{
+		// TODO Auto-generated method stub
+		
 	}
 }

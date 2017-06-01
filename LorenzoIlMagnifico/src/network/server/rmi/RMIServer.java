@@ -81,4 +81,11 @@ public class RMIServer extends ServerAstratto implements RMIServerInterfaccia
 		return id;
 	}
 
+	@Override
+	public void FineTurno(String username) 
+	{
+		GiocatoreRemoto gr = this.getGiocatore(username);
+		gr.FineTurno();
+	}
+
 }

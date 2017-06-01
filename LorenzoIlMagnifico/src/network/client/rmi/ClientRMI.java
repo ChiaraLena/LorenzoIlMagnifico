@@ -59,22 +59,19 @@ public class ClientRMI extends ClientAstratto implements RMIGiocatoreInterfaccia
 	@Override
 	public void NotificaNuovoTurno(String username) 
 	{
-		// TODO Auto-generated method stub
-		
+		this.getClient().InizioNuovoTurno(username);
 	}
 
 	@Override
 	public void NotificaUltimoTurno(String username) 
 	{
-		// TODO Auto-generated method stub
-		
+		this.getClient().InizioUltimoTurno(username);
 	}
 
 	@Override
 	public void NotificaGiocoTerminato() 
 	{
-		// TODO Auto-generated method stub
-		
+		this.getClient().FineGioco();
 	}
 
 	@Override

@@ -27,39 +27,24 @@ public class Familiare extends Giocatore
 		{
 			case 0:
 				colore=ColoriDado.bianco;
-<<<<<<< HEAD
+				forza = 1;
 				break;
 			case 1:
 				colore=ColoriDado.nero;
+				forza = 1;
 				break;
 			case 2:
 				colore=ColoriDado.arancione;
+				forza = 1;
 				break;
 			case 3:
 				colore=ColoriDado.neutro;
+				forza = 1;
 				break;
 		}
-		forza = 1;
-=======
-				forza=1;
-				break;
-			
-			case 1:
-				colore=ColoriDado.nero;
-				forza=1;
-				break;
-			
-			case 2:
-				colore=ColoriDado.arancione;
-				forza=1;
-				break;
-			
-			case 3:
-				colore=ColoriDado.neutro;
-				forza=0;
-				break;
-		}
->>>>>>> branch 'master' of https://github.com/ChiaraLena/LorenzoIlMagnifico.git
+
+				
+		
 	}
 	
 	public void CambiaForza(Dado d)

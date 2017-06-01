@@ -75,7 +75,7 @@ public class CartaImpresa extends Carta
 		setColore(ColoriCarteTorri.viola);
 	}
 	
-	public CartaImpresa (String n, int p, int cm, int cl, int cp, int cs, int cpm)
+	public CartaImpresa (String n, int p, int cm, int cl, int cp, int cs, int cpm, int pva)
 	{
 		setColore(ColoriCarteTorri.viola);
 		setNome(n);
@@ -85,6 +85,7 @@ public class CartaImpresa extends Carta
 		costopietra = cp;
 		costoservitore = cs;
 		costopuntomilitare = cpm;
+		puntivittoriaassegnati = pva;
 	}
 	
 	public Plancia EffettoImmediato() 

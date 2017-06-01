@@ -1,26 +1,5 @@
 package struttura;
 
-<<<<<<< HEAD
-public class Mercato extends Tabellone
-{
-	private boolean spaziolibero;
-	Plancia p;
-	
-	public boolean isSpaziolibero() 
-	{
-		return spaziolibero;
-	}
-
-	public void setSpaziolibero(boolean spaziolibero) 
-	{
-		this.spaziolibero = spaziolibero;
-	}
-	
-	public Mercato() 
-	{
-		spaziolibero = true;	
-		p = new Plancia();
-=======
 public class Mercato extends SpazioAzione
 {
 
@@ -47,7 +26,6 @@ public class Mercato extends SpazioAzione
 		this.malus=0;
 		this.numMaxFamiliari=1;
 		
->>>>>>> branch 'master' of https://github.com/ChiaraLena/LorenzoIlMagnifico.git
 	}
 
 	public Plancia OttieniRisorse(int i) 

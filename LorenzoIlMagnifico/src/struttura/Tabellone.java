@@ -10,19 +10,6 @@ public class Tabellone extends Turno
 	public Mercato[] spaziomercato;
 	public PalazzoConsiglio spazioconsiglio;
 	
-<<<<<<< HEAD
-	public Tabellone()
-	{
-		//creo le 4 torri, la differenza sta nel colore
-		torreterritorio = new Torre(0);
-		torreedificio = new Torre(2);
-		torrepersonaggio= new Torre(1);
-		torreimpresa = new Torre(3);
-		//creo tutti gli elementi rimanenti
-		spaziochiesa = new SpazioChiesa();
-		spaziomercato = new Mercato[4];
-		spazioconsiglio = new PalazzoConsiglio();
-=======
 	Raccolto spazioRaccoltoSingolo;
 	Raccolto spazioRaccoltoMultiplo;
 	
@@ -55,7 +42,6 @@ public class Tabellone extends Turno
 		spazioRaccoltoMultiplo.malus=3;
 		spazioProduzioneMultiplo=new Produzione();
 		spazioProduzioneMultiplo.malus=3;
->>>>>>> branch 'master' of https://github.com/ChiaraLena/LorenzoIlMagnifico.git
 	}
 	
 	public void Pulisci()

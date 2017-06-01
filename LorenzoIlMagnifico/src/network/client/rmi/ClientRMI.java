@@ -8,6 +8,7 @@ import java.rmi.server.UnicastRemoteObject;
 import network.ClientAstratto;
 import network.InterfacciaClient;
 import network.server.rmi.RMIServerInterfaccia;
+import struttura.Tabellone;
 
 public class ClientRMI extends ClientAstratto implements RMIGiocatoreInterfaccia
 {
@@ -55,26 +56,27 @@ public class ClientRMI extends ClientAstratto implements RMIGiocatoreInterfaccia
 			throw e;
 		}
 	}
+	
+	public void InizioNuovoGioco(Tabellone tab) 
+	{
+		this.getClient().InizioGioco(tab);
+	}
 
-	@Override
 	public void NotificaNuovoTurno(String username) 
 	{
 		this.getClient().InizioNuovoTurno(username);
 	}
 
-	@Override
 	public void NotificaUltimoTurno(String username) 
 	{
 		this.getClient().InizioUltimoTurno(username);
 	}
 
-	@Override
 	public void NotificaGiocoTerminato() 
 	{
 		this.getClient().FineGioco();
 	}
 
-	@Override
 	public void FineTurno() 
 	{
 		mioServer.FineTurno(nomeRMI);

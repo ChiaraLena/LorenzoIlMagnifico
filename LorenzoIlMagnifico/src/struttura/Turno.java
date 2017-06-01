@@ -1,6 +1,8 @@
 package struttura;
 
-public class Turno extends Partita
+import network.GiocatoreRemoto;
+
+public class Turno
 {
 	public Dado nero;
 	public Dado arancione;
@@ -10,6 +12,9 @@ public class Turno extends Partita
 	public int cont;
 	public int periodo;
 	
+	private GiocatoreRemoto gioc;
+	private static final Object MUTEX_TURNO = new Object();
+	
 	public Turno()
 	{
 		nero = new Dado(0);
@@ -17,6 +22,11 @@ public class Turno extends Partita
 		bianco = new Dado(2);
 		cont = 1;
 		periodo = 1;
+	}
+	
+	public GiocatoreRemoto setGiocatoreRemoto(GiocatoreRemoto username)
+	{
+		return gioc = username;
 	}
 	
 	public void Resetta()
@@ -30,4 +40,19 @@ public class Turno extends Partita
 		ord = tab.spazioconsiglio.NuovoOrdine();
 		tab.Pulisci();
 	}
+	
+	public boolean GiocatoreCorrente(GiocatoreRemoto username)
+	{
+		if (gioc==username)
+			return true;
+		return false;
+	}
+	
+	/*public void FineTurno()
+	{
+		synchronized(MUTEX_TURNO)
+		{
+			gioc.FineTurno();
+		}
+	}*/
 }

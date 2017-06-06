@@ -10,5 +10,5 @@ public interface InterfacciaClient
 	
 	void InizioUltimoTurno(String username);
 	
-	void FineGioco();
+	void FineGioco(); //ciao
 }
